@@ -1,0 +1,6 @@
+For the array [97, 11, 12, 16, 28, 30, 33, 45, 69, 80]
+The index of 97 is: -1
+
+For the array [66, 71, 85, 98, 12, 13, 44, 46, 52, 55]
+The index of 98 is: -1
+

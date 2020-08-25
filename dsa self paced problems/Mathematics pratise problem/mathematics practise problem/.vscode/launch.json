@@ -1,0 +1,85 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NewCode<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "NewCode",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q1<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q1",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q10<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q10",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q2<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q2",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q3<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q3",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q4<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q4",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q5<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q5",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q6<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q6",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q8<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q8",
+            "projectName": "mathematics practise problem_5afac96c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Q9<mathematics practise problem_5afac96c>",
+            "request": "launch",
+            "mainClass": "Q9",
+            "projectName": "mathematics practise problem_5afac96c"
+        }
+    ]
+}

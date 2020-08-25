@@ -1,0 +1,5 @@
+create a subordinate string st.
+
+in each recursion we will cut the first element of the str string and put it into the st, then pass the str string once again into recursion.
+
+in each recursion the the indexed element will replace it's place with 1st indexed element.

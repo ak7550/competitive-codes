@@ -1,0 +1,11 @@
+Random rand=new Random();
+int T=rand.nextInt(50);
+for(int i=0;i<T;i++)
+{
+    int N=rand.nextInt(50);
+    int[] arr=new int[N];
+    for(int j=0;j<arr.length;j++)
+    {
+        arr[j]=rand.nextInt(9);
+    }
+}

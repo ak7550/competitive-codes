@@ -1,0 +1,1 @@
+return (count>=2)?true:false;

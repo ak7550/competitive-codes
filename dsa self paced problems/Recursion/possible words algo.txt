@@ -1,0 +1,18 @@
+String[] str = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+buffer[]={0,0,0};
+a[]={2,3,4}
+ buffer length is equal with the length of a
+ each and every element of buffer can have values from 0 to max(buffer[bindex])=str[a[bindex]-2].length-1
+ the traversing will come to an if all the elements in the buffer array reach to its maximum value all togrether
+ th evalues of the buffer[] elements should increase in binary value increamental manner
+ and when bindex==buffer.length at that tym we need to print 'st'
+
+  reach till the end buffer appending st.setCharAt(bindex,str[a[bindex]-2].charAt(buffer[bindex])) and checking if any bit has reached to it's maxval
+ bindex++
+
+ if(bindex==buffer.length) // it's time to print
+ {
+     sop(st);
+ }
+
+ checkAllBit(buffer)

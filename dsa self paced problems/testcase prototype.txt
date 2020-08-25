@@ -1,0 +1,11 @@
+Basic structure of taking test cases:--
+
+main()
+{
+    Scanner sc=new Scanner(System.in);
+    T=sc.nextInt();
+    while(T-->0){
+        // take more user inputs and call the methods accordingly
+    }
+    sc.close();
+}

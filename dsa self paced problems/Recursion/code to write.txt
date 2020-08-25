@@ -1,0 +1,3 @@
+Generate numbers of base n having m digits of it using recursion.
+
+write code to find all the combination of a given word
