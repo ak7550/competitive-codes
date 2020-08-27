@@ -9,6 +9,10 @@ public class Array {
         return InputOutput.ArrayListFromString(str).stream().mapToInt(Integer::valueOf).toArray();
     }
 
+    public static int[] intArrayFromArrayList(ArrayList<Integer> arrayList) {
+        return arrayList.stream().mapToInt(Integer::valueOf).toArray();
+    }
+
     public static Integer[] swapIntegers(Integer arr[], int firstIndex, int secondIndex) {
         Integer temp = arr[firstIndex];
         arr[firstIndex] = arr[secondIndex];
