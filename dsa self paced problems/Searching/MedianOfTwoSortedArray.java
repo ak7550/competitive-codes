@@ -14,11 +14,11 @@ public class MedianOfTwoSortedArray {
         System.out.print("Enter the size of the second Array: ");
         int n2 = sc.nextInt();
         System.out.println("Enter the first array: ");
-        // int a1[] = CompetetiveCoding.takeIntegerArrayInput(n1);
-        int a1[] = Array.giveAnArray(n1, 100);
+        int a1[] = CompetetiveCoding.takeIntegerArrayInput(n1);
+        // int a1[] = Array.giveAnArray(n1, 100);
         System.out.println("Enter the second array: ");
-        // int a2[] = CompetetiveCoding.takeIntegerArrayInput(n2);
-        int a2[] = Array.giveAnArray(n2, 100);
+        int a2[] = CompetetiveCoding.takeIntegerArrayInput(n2);
+        // int a2[] = Array.giveAnArray(n2, 100);
         Arrays.sort(a1);
         Arrays.sort(a2);
         double median = findMedian(a1, a2);
