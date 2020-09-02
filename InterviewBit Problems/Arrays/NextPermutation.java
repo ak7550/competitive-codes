@@ -23,7 +23,7 @@ public class NextPermutation {
             }
         }
         if (discrepency < num.length - 1) {
-            for (int i = discrepency + 1; i < num.length; i++) {
+            for (int i = num.length-1; i > discrepency; i--) {
                 if (num[discrepency] < num[i]) {
                     swap(num, discrepency, i);
                     break;
