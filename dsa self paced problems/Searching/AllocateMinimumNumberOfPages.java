@@ -24,7 +24,7 @@ public class AllocateMinimumNumberOfPages {
             int mid = start + (end - start) / 2;
             if (isValid(arr, mid, m)) {
                 res = mid;
-                end = mid - 1; // when we have got a valid number, then search in the left.
+                end = mid - 1; // when we have got a valid number, then search in the left to get more minimum values.
             } else {
                 start = mid + 1;
             }
