@@ -1,0 +1,15 @@
+zeros-ones<0{
+    zero=0
+    one=0
+    l=i+1
+}
+
+zero-one>0
+max=zero-one;
+left=l
+right=i
+
+011
+max 1-0=1
+
+ip-111

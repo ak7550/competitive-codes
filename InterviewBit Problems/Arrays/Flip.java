@@ -15,29 +15,29 @@ public class Flip {
 
     public static ArrayList<Integer> getResult(String str) {
         ArrayList<Integer> ans = new ArrayList<Integer>();
-        int left = -1, right = -1, l = 0, zeroes = 0, ones = 0, maxZeroes = 0;
+        int left = -1, right = -1, tempL = 0, zeroCount = 0, onecount = 0, maxDifference = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == '0') {
-                zeroes++;
+                zeroCount++;
             } else {
-                ones++;
+                onecount++;
             }
-            if (zeroes - ones < 0) {
-                zeroes = 0;
-                ones = 0;
-                l = i + 1;
-            } else if (zeroes - ones > maxZeroes) {
-                maxZeroes = zeroes - ones;
-                left = l;
+            if (zeroCount - onecount < 0) {
+                zeroCount = 0;
+                onecount = 0;
+                tempL = i + 1;
+            } else if (zeroCount - onecount > maxDifference) {
+                maxDifference = zeroCount - onecount;
+                left = tempL;
                 right = i;
             }
         }
-        if (maxZeroes > 0) {
-            left = left + 1;
-            right = right + 1;
-            ans.add(left);
-            ans.add(right);
+        if (maxDifference > 0) { // to avoid the string consisting all 1's.
+            ans.add(left+1);
+            ans.add(right+1);
         }
         return ans;
     }
 }
+
+// using kadane's algorithm to find maximum contigious substring where countOfZeroes-countOfOnes is maximum

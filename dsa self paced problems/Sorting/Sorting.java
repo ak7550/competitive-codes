@@ -16,8 +16,8 @@ public class Sorting {
         // arr = selectionSort(arr);
         // arr = insertionSort(arr);
         // arr = bubbleSort(arr);
-        // mergeSort(arr,0,arr.length-1);
-        quickSort(arr, 0, arr.length - 1);
+        mergeSort(arr,0,arr.length-1);
+        // quickSort(arr, 0, arr.length - 1);
         System.out.println("The sorted array is: " + Arrays.toString(arr));
     }
 
