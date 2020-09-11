@@ -10,7 +10,7 @@ public class FindTheDuplicate {
             int line[] = InputOutput.arrayFromString(lines.remove(0));
             System.out.println("For Input: " + Arrays.toString(line));
             int dup = getResult(line);
-            System.out.println("Output is: " + dup);
+            System.out.println("Ans is: " + dup);
         }
     }
 

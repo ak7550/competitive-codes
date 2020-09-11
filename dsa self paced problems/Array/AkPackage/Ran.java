@@ -49,4 +49,16 @@ public class Ran extends Random {
         return getStringFixedLength(1, smallletters) + getString(20, (smallletters + numbers)) + "@"
                 + getStringFixedLength(6, smallletters) + "." + getStringFixedLength(3, smallletters);
     }
+
+    public int[] giveAnArray(int size) {
+        return giveAnArray(size, 100);
+    }
+
+    public int[] giveAnArray(int size, int bound) {
+        int arr[] = new int[size];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = nextInt(bound);
+        }
+        return arr;
+    }
 }

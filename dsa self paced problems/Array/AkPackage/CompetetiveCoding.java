@@ -36,9 +36,9 @@ public class CompetetiveCoding {
         int arr[] = new int[length];
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < length; i++) {
-            arr[i] = scanner.nextInt();
+            int x=scanner.nextInt();
+            arr[i] = x;
         }
-        scanner.close();
         System.out.println("the array is: " + Arrays.toString(arr));
         return arr;
     }
