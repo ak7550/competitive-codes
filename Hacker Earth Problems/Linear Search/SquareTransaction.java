@@ -7,7 +7,8 @@ class SquareTransaction {
         int T = sc.nextInt();
         long arr[] = new long[(int) T];
         long sum = 0;
-        ;
+        
+        
         for (int i = 0; i < T; i++) {
             arr[i] = sc.nextInt();
             sum += arr[i];
