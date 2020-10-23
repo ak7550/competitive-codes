@@ -1,24 +1,26 @@
 import java.util.Arrays;
-import java.util.Scanner;
+import java.io.*;
 
 //Code Link:- https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/to-do-b9cfd3e3/
 public class DrProgrammer {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int nx = sc.nextInt();
-        int ny = sc.nextInt();
-        int q = sc.nextInt();
-        long x[] = new long[nx];
-        long[] y = new long[ny];
+    public static void main(String[] args) throws IOException {
+        BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+        String[] firstLine = stdin.readLine().split(" "), secondLine = stdin.readLine().split(" "),thirdLine=stdin.readLine().split(" ");
+        long nx =  Long.parseLong(firstLine[0]);
+        long ny =  Long.parseLong(firstLine[1]);
+        long q = Long.parseLong(firstLine[2]);
+        long x[] = new long[(int)nx];
+        long[] y = new long[(int)ny];
         for (int i = 0; i < x.length; i++) {
-            x[i] = sc.nextLong();
+            x[i] = Long.parseLong(secondLine[i]);
         }
         for (int i = 0; i < y.length; i++) {
-            y[i] = sc.nextLong();
+            y[i] = Long.parseLong(thirdLine[i]);
         }
-        sc.nextLine();
+        Arrays.sort(x);
+        Arrays.sort(y);
         for (int i = 0; i < q; i++) {
-            String line = sc.nextLine();
+            String line = stdin.readLine();
             System.out.println("For line: " + line);
             System.out.println("Result is: " + getResult(line, x, y));
         }
@@ -27,8 +29,6 @@ public class DrProgrammer {
     public static int getResult(String line, long x[], long y[]) {
         String str[] = line.split(" ");
         long z = Long.parseLong(str[0]);
-        Arrays.sort(x);
-        Arrays.sort(y);
         if (str[1].equals("A")) {
             return getDataC(z, x, y, Long.parseLong(str[2]), Long.parseLong(str[3]), 0, y[y.length - 1]);
         } else if (str[1].equals("B")) {
@@ -41,36 +41,58 @@ public class DrProgrammer {
 
     public static int getDataC(long z, long x[], long y[], long l1, long r1, long l2, long r2) {
         int count = 0, startingIndex1 = 0, endingIndex1 = x.length - 1, startingIndex2 = 0, endingIndex2 = y.length - 1;
-        while (x[startingIndex1] < l1) {
+        while ( startingIndex1 < x.length && x[startingIndex1] < l1 ) {
             startingIndex1++;
         }
-        while (x[endingIndex1] > r1) {
+        while ( endingIndex1 >= 0 && x[endingIndex1] > r1) {
             endingIndex1--;
         }
-        while (y[startingIndex2] < l2) {
+        while ( startingIndex2 < y.length && y[startingIndex2] < l2) {
             startingIndex2++;
         }
-        while (y[endingIndex2] > r2) {
+        while ( endingIndex2 >= 0 && y[endingIndex2] > r2) {
             endingIndex2--;
         }
-        for (int i = startingIndex1; i <= endingIndex1+1; i++) {
-            int res = binarySearch(y, startingIndex2, endingIndex2+1, z - x[i]);
+
+        if (startingIndex1 > endingIndex1 || startingIndex2 > endingIndex2 ) {
+            return 0;
+        }
+        long bigArray[], smallArray[];
+        if (endingIndex1 - startingIndex1 + 1 >= endingIndex2 - startingIndex2 + 1) {
+            bigArray = x;
+            smallArray = y;
+            int temp1 = startingIndex1, temp2 = endingIndex1;
+            startingIndex1 = startingIndex2;
+            endingIndex1 = endingIndex2;
+            startingIndex2 = temp1;
+            endingIndex2 = temp2;
+        } else {
+            bigArray = y;
+            smallArray = x;
+        }
+        for (int i = startingIndex1; i <= endingIndex1; i++) {
+            int res = binarySearch(bigArray, startingIndex2, endingIndex2, z - smallArray[i]);
             if (res >= 0) {
-                System.out.println(x[i] + ", " + y[res]);
-                count++;
+                res = res - startingIndex2 + 1;
+                System.out.println(res);
+                count += res;
             }
         }
         return count;
     }
 
     public static int binarySearch(long arr[], int s, int e, long k) {
-        int mid = s + (e - s) / 2;
-        if (arr[mid] <= k)
-            return mid;
-        if (s <= e) {
-            return binarySearch(arr, s, mid - 1, k);
+        if (e >= 0 && arr[e] <= k)
+            return e;
+        if (s < e) {
+            int mid = s + (e - s) / 2;
+            if (mid >= 0 && arr[mid] <= k) {
+                int ans = binarySearch(arr, mid + 1, e, k);
+                return ans == -1 ? mid : ans;
+            } else {
+                return binarySearch(arr, s, mid - 1, k);
+            }
         }
         return -1;
     }
-
 }

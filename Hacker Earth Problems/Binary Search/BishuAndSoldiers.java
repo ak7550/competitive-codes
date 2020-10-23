@@ -14,8 +14,8 @@ public class BishuAndSoldiers {
         }
         // i represents rounds
         int rounds=sc.nextInt();
-        for (int i = 0; i < rounds ; i++) {
-            int powerOfBishu = sc.nextInt(), kill=0, sum=0;
+        for (int i = 0; i < rounds; i++) {
+            int powerOfBishu = sc.nextInt(), kill = 0, sum = 0;
             for (int powerOfSoldier : powers) {
                 if (powerOfSoldier <= powerOfBishu) {
                     kill++;
@@ -26,5 +26,6 @@ public class BishuAndSoldiers {
             kill = 0;
             sum = 0;
         }
+        sc.close();
     }
 }
