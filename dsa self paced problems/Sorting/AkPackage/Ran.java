@@ -49,6 +49,7 @@ public class Ran extends Random {
         return getStringFixedLength(1, smallletters) + getString(20, (smallletters + numbers)) + "@"
                 + getStringFixedLength(6, smallletters) + "." + getStringFixedLength(3, smallletters);
     }
+
     public int[] giveAnArray(int size) {
         return giveAnArray(size, 100);
     }
@@ -60,5 +61,4 @@ public class Ran extends Random {
         }
         return arr;
     }
-
 }

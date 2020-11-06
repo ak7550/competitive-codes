@@ -9,6 +9,10 @@ public class Array {
         return InputOutput.ArrayListFromString(str).stream().mapToInt(Integer::valueOf).toArray();
     }
 
+    public static int[] intArrayFromArrayList(ArrayList<Integer> arrayList) {
+        return arrayList.stream().mapToInt(Integer::valueOf).toArray();
+    }
+
     public static Integer[] swapIntegers(Integer arr[], int firstIndex, int secondIndex) {
         Integer temp = arr[firstIndex];
         arr[firstIndex] = arr[secondIndex];
@@ -62,11 +66,7 @@ public class Array {
         }
         return maxFar;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> v2.1
     public static int[] reverseArr(int arr[]) {
         for (int i = 0; i < arr.length / 2; i++) {
             int tem = arr[i];
@@ -77,8 +77,6 @@ public class Array {
         return arr;
     }
 
-<<<<<<< HEAD
-=======
     public static int[] giveAnArray(int size, int bound) {
         return new Ran().giveAnArray(size, bound);
     }
@@ -86,7 +84,17 @@ public class Array {
     public static int[] giveAnArray(int size) {
         return giveAnArray(size, 100);
     }
->>>>>>> v2.1
+
+    public static double findMedian(int arr[]) {
+        int a[] = arr;
+        if (a.length == 0)
+            return -1;
+        Arrays.sort(a);
+        if (a.length % 2 == 0) {
+            return ((double) a[a.length / 2] + (double) a[(a.length / 2) - 1]) / 2;
+        }
+        return a[a.length / 2];
+    }
 }
 
 // convert arraylist to array of same wrapper class

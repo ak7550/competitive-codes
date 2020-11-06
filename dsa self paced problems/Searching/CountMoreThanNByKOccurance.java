@@ -39,4 +39,5 @@ public class CountMoreThanNByKOccurance {
         }
         return count;
     }
-}
+    // O(n) solution, use hashmap to count the frequencies of all the elements.
+} 
