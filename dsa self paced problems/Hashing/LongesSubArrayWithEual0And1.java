@@ -18,6 +18,6 @@ public class LongesSubArrayWithEual0And1 {
         }
     }
     public static int getResult(int arr[]) {
-                
+        return 0;
     }
 }
