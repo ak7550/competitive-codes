@@ -5,7 +5,7 @@ public class DetectCycleInUndirectedGraph {
     public static void main(String args[]) {
         ArrayList<String> lines = InputOutput.takeCompleteInput(new DetectCycleInUndirectedGraph());
         while (!lines.isEmpty()) {
-            Graph.InnerGraph ig = Graph.takeAdjacencyListInputUNDIRECTED(lines);
+            Graph.InnerGraph<Integer> ig = Graph.takeAdjacencyListInputUNDIRECTED(lines);
             System.out.println("The following graph : ");
             Graph.printAdjacencyList(ig.adjacencyList);
             System.out.println("do " + (detectCycle(ig.adjacencyList, ig.vertices) ? "" : "not") + " contain a cycle");

@@ -5,7 +5,7 @@ public class DetectCycleInDirectedGraph {
     public static void main(String args[]) {
         ArrayList<String> lines = InputOutput.takeCompleteInput(new DetectCycleInDirectedGraph());
         while (!lines.isEmpty()) {
-            Graph.InnerGraph ig = Graph.takeAdjacencyListInputDIRECTED(lines);
+            Graph.InnerGraph<Integer> ig = Graph.takeAdjacencyListInputDIRECTED(lines);
             System.out.println("For the given graph: ");
             Graph.printAdjacencyList(ig.adjacencyList);
             System.out.println("Cycle does" + (checkCycle(ig.adjacencyList, ig.vertices) ? "" : " not") + " exist.");

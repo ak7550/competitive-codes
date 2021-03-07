@@ -5,7 +5,7 @@ public class DFS {
     public static void main(String args[]) {
         ArrayList<String> lines = InputOutput.takeCompleteInput(new DFS());
         while (!lines.isEmpty()) {
-            Graph.InnerGraph ig = Graph.takeAdjacencyListInputUNDIRECTED(lines);
+            Graph.InnerGraph<Integer> ig = Graph.takeAdjacencyListInputUNDIRECTED(lines);
             System.out.println("DFS is: " + DFSOfGraph(ig.vertices, ig.adjacencyList));
         }
     }

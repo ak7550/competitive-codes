@@ -6,7 +6,7 @@ public class FindWhetherPathExist {
     public static void main(String args[]) {
         ArrayList<String> lines = InputOutput.takeCompleteInput(new FindWhetherPathExist());
         while (!lines.isEmpty()) {
-            Graph.InnerGraph ig = Graph.takeAdjacencyListInputDIRECTED(lines);
+            Graph.InnerGraph<Integer> ig = Graph.takeAdjacencyListInputDIRECTED(lines);
             int arr[] = InputOutput.arrayFromString(lines.remove(0)), source = arr[0], dest = arr[1];
             System.out.println("For the given graph:");
             Graph.printAdjacencyList(ig.adjacencyList);

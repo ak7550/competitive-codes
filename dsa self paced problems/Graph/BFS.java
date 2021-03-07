@@ -5,7 +5,7 @@ public class BFS {
     public static void main(String args[]) {
         ArrayList<String> lines = InputOutput.takeCompleteInput(new BFS());
         while (!lines.isEmpty()) {
-            Graph.InnerGraph ig = Graph.takeAdjacencyListInputDIRECTED(lines);
+            Graph.InnerGraph<Integer> ig = Graph.takeAdjacencyListInputDIRECTED(lines);
             System.out.println("DFS is: " + bfsOfGraph(ig.vertices, ig.adjacencyList));
         }
     }

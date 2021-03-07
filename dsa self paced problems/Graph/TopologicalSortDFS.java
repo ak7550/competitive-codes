@@ -1,7 +1,7 @@
 import AkPackage.*;
 import java.util.*;
 
-public class TopologicalSorting {
+public class TopologicalSortDFS {
     public static void main(String args[]) {
         ArrayList<String> lines = InputOutput.takeCompleteInput(new TopologicalSorting());
         while (!lines.isEmpty()) {
@@ -14,27 +14,23 @@ public class TopologicalSorting {
     }
 
     public static void topologicalSort(ArrayList<ArrayList<Integer>> adj, int V) {
-        int indegree[] = new int[V];
+        Stack<Integer> stack = new Stack<Integer>();
+        boolean found[] = new boolean[V];
         for (int i = 0; i < V; i++) {
-            for (int x : adj.get(i))
-                indegree[x]++;
-        }
-        Queue<Integer> q = new LinkedList<Integer>();
-        for (int i = 0; i < indegree.length; i++)
-            if (indegree[i] == 0) {
-                q.add(i);
-                indegree[i]--;
+            if (!found[i]) {
+                dfs(i, found, adj, stack);
             }
-        while (!q.isEmpty()) {
-            int vertex = q.poll();
-            System.out.print(vertex + " ");
-            for (int x : adj.get(vertex))
-                indegree[x]--;
-            for (int i = 0; i < indegree.length; i++)
-                if (indegree[i] == 0) {
-                    q.add(i);
-                    indegree[i]--;
-                }
         }
+        while (!stack.isEmpty())
+            System.out.print(stack.pop()+ " ");
+    }
+
+    public static void dfs(int vertex, boolean found[], ArrayList<ArrayList<Integer>> adj, Stack<Integer> st) {
+        found[vertex] = true;
+        for (int v : adj.get(vertex)) {
+            if (!found[v])
+                dfs(v, found, adj, st);
+        }
+        st.push(vertex);
     }
 }
