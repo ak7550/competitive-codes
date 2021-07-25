@@ -12,7 +12,7 @@ public class MinimumNumberOfJumps {
             System.out.println("Minimum number of jumps required to reach " + arr.length + " is: "
                     + minimumJumps(arr, arr.length));
         }
-    }
+    }   
 
     // O(n^2) approach
     public static int minimumJumps2(int arr[], int sum) {
@@ -84,4 +84,3 @@ public class MinimumNumberOfJumps {
         return possibleReach ? jumps : -1;
     }
 }
-

@@ -18,8 +18,7 @@ public class MColouringProblem {
     }
 
     public static boolean graphColouring(ArrayList<ArrayList<Integer>> adj, int colors[], int v, int m) {
-        if (Arrays.stream(colors).filter(a -> a == 0).count() == 0) // -> all the vertices of the graph has been
-                                                                    // coloured
+        if (Arrays.stream(colors).filter(a -> a == 0).count() == 0) // -> all the vertices of the graph has been coloured
             return true;
         for (int i = 1; i <= m; i++) {
             if (isSafe(adj, colors, v, i)) {

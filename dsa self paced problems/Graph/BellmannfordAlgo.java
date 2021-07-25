@@ -23,7 +23,9 @@ public class BellmannfordAlgo {
         }
     }
 
-    public static void findNegativeEdgeCycle(ArrayList<ArrayList<SimpleEntry<Integer, Integer>>> adj, int V, int[] dis) {
+    public static void findNegativeEdgeCycle(ArrayList<ArrayList<SimpleEntry<Integer, Integer>>> adj, int V,
+            int[] dis) {
+        //-> at this point all the vertices should be relaxed, so the if condition should nvr satisfy....
         for (int v = 0; v < adj.size(); v++) {
             for (SimpleEntry<Integer, Integer> u : adj.get(v))
                 if(dis[u.getKey()]>dis[v] + u.getValue()) // relax operation

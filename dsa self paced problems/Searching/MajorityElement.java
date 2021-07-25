@@ -17,7 +17,7 @@ public class MajorityElement {
         return (frequency(a, candidate) > a.length / 2) ? candidate : -1;
     }
 
-    //Moore's Voting Algorithm, accurate all the time. finding the element having frequency greater than the array length.
+    //=> Moore's Voting Algorithm, accurate all the time. finding the element having frequency greater than the array length.
     public static int findCandidate(int a[]) {
         int majIndex = 0, count = 0;
         for (int i = 0; i < a.length; i++) {

@@ -28,14 +28,14 @@ public class MergeKsortedArrays {
     public static ArrayList<Integer> mergeKArrays(int arrays[][], int k) {
         ArrayList<Integer> arr = new ArrayList<Integer>();
         PriorityQueue<ArrInfo> pq = new PriorityQueue<ArrInfo>(k, (a, b) -> a.value-b.value );
-        for (int i = 0; i < arrays.length; i++) 
-            pq.add(new ArrInfo(arrays[i][0], i, 0));
+        for (int i = 0; i < arrays.length; i++)
+            pq.add(new ArrInfo(arrays[i][0], i, 0)); // -> inserting the 1st elements of every array, considering those are lowest among all the other array elements.
         while (!pq.isEmpty()) {
             ArrInfo a = pq.poll();
             arr.add(a.value);
             if (a.elePos + 1 < arrays[a.arrayPos].length)
                 pq.add(new ArrInfo(arrays[a.arrayPos][a.elePos + 1], a.arrayPos, a.elePos + 1));
         }
-        return arr;    
+        return arr;
     }
 }

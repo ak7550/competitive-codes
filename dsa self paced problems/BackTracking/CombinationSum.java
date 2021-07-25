@@ -21,7 +21,7 @@ public class CombinationSum {
         ArrayList<Integer> arr2 = new ArrayList<Integer>();
         arr2.add(arr.get(0));
         for (int i = 1; i < arr.size(); i++) {
-            if (arr2.get(arr2.size() - 1) != arr.get(i))
+            if (arr2.get(arr2.size() - 1) != arr.get(i)) //removing the repeating elements
                 arr2.add(arr.get(i));
         }
         System.out.println("updated array" + arr2);

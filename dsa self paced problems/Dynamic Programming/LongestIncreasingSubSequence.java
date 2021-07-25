@@ -88,7 +88,7 @@ public class LongestIncreasingSubSequence {
                 return arr.get(mid) < value ? mid + 1 : mid;
             // sweet spot
             else if (arr.get(mid - 1) < value && arr.get(mid + 1) > value)
-                return arr.get(mid) < value ? mid + 1 : mid;
+                return mid + 1;
             else if (arr.get(mid) > value)
                 end = mid;
             else

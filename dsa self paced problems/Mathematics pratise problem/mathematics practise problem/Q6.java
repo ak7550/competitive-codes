@@ -12,8 +12,7 @@ public class Q6 {
             spf[i] = 2;
         }
         for (Integer i = 3; i * i <= n; i++) {
-            if (spf[i] == i) // that means i is a prime number as of now, replace all the multiples of i with
-                             // i
+            if (spf[i] == i) // that means i is a prime number as of now, replace all the multiples of i with i
             {
                 for (Integer j = i * i; j <= n; j += i) {
                     // marking spf[j]=i

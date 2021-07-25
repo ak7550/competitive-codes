@@ -25,7 +25,7 @@ public class EggDroppingProblem {
                 for (int x = 1; x <= i; x++)
                     dp[i][j] = Math.min(dp[i][j], 1 + Math.max(dp[x - 1][j - 1], dp[i - x][j]));
                 //-> egg break ==> thressold floor is below x, and I have lost an egg
-                // -> egg does not break ==> thressold floor is above x, and I count of eggs are intact.
+                // -> egg does not break ==> thressold floor is above x, and the count of eggs is intact.
             }
         }
         return dp[floor][eggs];

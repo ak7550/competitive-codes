@@ -28,7 +28,7 @@ public class RemovingConsecutiveDuplicates {
                 st.push(str.charAt(i));
         }
         StringBuilder sb = new StringBuilder();
-        st.forEach(x -> sb.append(x));
+        st.forEach(sb::append);
         return sb.toString();
     }
 }

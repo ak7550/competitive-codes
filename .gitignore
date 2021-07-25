@@ -4,3 +4,6 @@
 .env
 .ini
 AkPackage
+*.exe
+/*/*/AkPackage
+dsa self paced problems/Array/AkPackage/Array.java

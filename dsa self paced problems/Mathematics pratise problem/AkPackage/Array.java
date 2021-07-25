@@ -3,37 +3,14 @@ package AkPackage;
 import java.util.*;
 
 public class Array {
-    public static Integer[] integerArrayFromString(String str) {
-        String arr[] = str.split(" ");
-        List<Integer> myarr = new ArrayList<Integer>();
-        for (String string : arr) {
-            try {
-                Integer ii = Integer.parseInt(string);
-                myarr.add(ii);
-            } catch (Exception e) {
-                // TODO: handle exception
-                // System.out.println("Exception avoided. The String is: "+ string);
-            }
-        }
-        Integer[] a = new Integer[myarr.size()];
-        // looks damn painfull, impromisation needed.
-        for (int i = 0; i < a.length; i++) {
-            a[i] = myarr.get(i);
-        }
-        return a;
-    }
 
     // a method that converts list to array regardless of it's wrapper class
     public static int[] arrayFromString(String str) {
-        return integerToint(integerArrayFromString(str));
+        return InputOutput.ArrayListFromString(str).stream().mapToInt(Integer::valueOf).toArray();
     }
 
-    public static int[] integerToint(Integer[] arr) {
-        int a[] = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            a[i] = arr[i];
-        }
-        return a;
+    public static int[] intArrayFromArrayList(ArrayList<Integer> arrayList) {
+        return arrayList.stream().mapToInt(Integer::valueOf).toArray();
     }
 
     public static Integer[] swapIntegers(Integer arr[], int firstIndex, int secondIndex) {
@@ -79,4 +56,46 @@ public class Array {
             arr[j] = temp;
         }
     }
+
+    public static int kadane(int[] arr) {
+        int curentMax = arr[0], maxFar = arr[0];
+        for (int j = 1; j < arr.length; j++) {
+            int i = arr[j];
+            curentMax = Math.max(i, i + curentMax);
+            maxFar = Math.max(curentMax, maxFar);
+        }
+        return maxFar;
+    }
+
+    public static int[] reverseArr(int arr[]) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            int tem = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = tem;
+        }
+        // System.out.println("After Reversing the Array: " + Arrays.toString(arr));
+        return arr;
+    }
+
+    public static int[] giveAnArray(int size, int bound) {
+        return new Ran().giveAnArray(size, bound);
+    }
+
+    public static int[] giveAnArray(int size) {
+        return giveAnArray(size, 100);
+    }
+
+    public static double findMedian(int arr[]) {
+        int a[] = arr;
+        if (a.length == 0)
+            return -1;
+        Arrays.sort(a);
+        if (a.length % 2 == 0) {
+            return ((double) a[a.length / 2] + (double) a[(a.length / 2) - 1]) / 2;
+        }
+        return a[a.length / 2];
+    }
 }
+
+// convert arraylist to array of same wrapper class
+// String[] array = list.toArray(new String[list.size()]);

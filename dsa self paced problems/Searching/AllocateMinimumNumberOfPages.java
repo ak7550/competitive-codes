@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import AkPackage.Array;
-import AkPackage.CompetetiveCoding;
 import AkPackage.InputOutput;
 
 public class AllocateMinimumNumberOfPages {
@@ -19,7 +18,7 @@ public class AllocateMinimumNumberOfPages {
     }
 
     public static int getResult(int arr[], int m) {
-        int start = findMax(arr), end = CompetetiveCoding.sumOfArrayElements(arr), res = 0;
+        int start = Arrays.stream(arr).max().getAsInt(), end = Arrays.stream(arr).sum(), res = 0;
         while (start <= end) {
             int mid = start + (end - start) / 2;
             if (isValid(arr, mid, m)) {
@@ -32,13 +31,7 @@ public class AllocateMinimumNumberOfPages {
         return res;
     }
 
-    public static int findMax(int arr[]) {
-        int max = Integer.MIN_VALUE;
-        for (int i : arr) {
-            max = Math.max(max, i);
-        }
-        return max;
-    }
+
     public static boolean isValid(int arr[], int max, int givenNoOfStudents) {
         int studentCount = 1, sum = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -51,6 +44,6 @@ public class AllocateMinimumNumberOfPages {
                 }
             }
         }
-        return studentCount <= givenNoOfStudents;
+        return studentCount <= givenNoOfStudents; // we can return true directly, instead of checking anything else here.
     }
 }

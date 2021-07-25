@@ -22,13 +22,13 @@ public class Array {
 
     public static void leftRotateArr(int arr[], int d) {
         // add your code here
-        int g = Mathematics.gcd(arr.length, d);
+        int g = Mathematics.gcd(arr.length, d); // g = number of sets
         for (int i = 0; i < g; i++) {
             int temp = arr[i];
             int j = i;
             while (true) {
                 int k = (j + d) % arr.length;
-                if (k == i)
+                if (k == i) // security check
                     break;
                 arr[j] = arr[k];
                 j = k;
