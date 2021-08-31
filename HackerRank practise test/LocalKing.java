@@ -35,7 +35,7 @@ public class LocalKing {
         max = Math.max(max, b);
         max = Math.max(max, c);
         new StringBuilder().append(str);
-        Integer.
+        // Integer.
         return max;
     }
 

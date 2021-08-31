@@ -4,3 +4,7 @@ ABC
 AC
 ABC
 XYZ
+aaacbbcd
+abcdab
+shinchan
+noharaaa

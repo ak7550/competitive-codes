@@ -45,8 +45,7 @@ public class NumberOfWayCoinChange {
                     dp[s][c]++;
             }
         }
-
-        Arrays.stream(dp).forEach(x -> System.out.println(Arrays.toString(x)));
+        Arrays.deepToString(dp);
         return dp[sum][coins.length - 1];
     }
 }

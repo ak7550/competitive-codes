@@ -8,7 +8,7 @@ public class ShortestCommonSuperSequence {
             String s1 = lines.remove(0), s2 = lines.remove(0);
             System.out.println("s1: " + s1);
             System.out.println("s2: " + s2);
-            System.out.println("Length of longest common subsequence: "
+            System.out.println("Length of shortest common subsequence: "
                     + shortestCommonSuperSequence(s1, s2, s1.length(), s2.length()));
         }
     }

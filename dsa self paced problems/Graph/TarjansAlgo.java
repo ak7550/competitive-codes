@@ -61,5 +61,4 @@ public class TarjansAlgo {
             res.add(0, r);
         }
     }
-
 }

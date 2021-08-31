@@ -47,10 +47,13 @@ public class SubSetSumProblem {
 
     public static int subSetSum(int arr[], int sum) {
         int dp[][] = new int[arr.length + 1][sum + 1];
+        // sum= 0 can be made possible atleast one way that is
+        // -> don't consider any element into the subarray
         for (int i = 0; i <= arr.length; i++)
             dp[i][0] = 1;
         for (int i = 1; i <= sum; i++)
             dp[0][i] = 0;
+            // default value initialization, assuming sum=i can't be made possible atleast by 1st element of the array
         for (int i = 1; i <= arr.length; i++) {
             for (int j = 1; j <= sum; j++) {
                 if (j < arr[i - 1])

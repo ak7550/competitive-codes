@@ -28,4 +28,17 @@ public class MaxAndSecondMax {
         }
         System.out.println("Max is: " + max + " Second max is: " + secondMax);
     }
+
+    public static void getResult2(int arr[]) {
+        int max = arr[0], sMax = -1;
+        for (int i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                sMax = max;
+                max = arr[i];
+            }
+            if (sMax < arr[i] && arr[i] < max)
+                sMax = arr[i];
+        }
+        System.out.println("Max is: " + max + " Second max is: " + sMax);
+    }
 }

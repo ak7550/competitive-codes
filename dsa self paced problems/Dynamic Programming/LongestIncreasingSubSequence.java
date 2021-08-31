@@ -14,10 +14,8 @@ public class LongestIncreasingSubSequence {
 
     // O(n^2) solution, O(n^2) space
     public static void longestSubSequence(int arr[]) {
-        @SuppressWarnings("unchecked") // docs:
-                                       // https://stackoverflow.com/questions/14847480/type-safety-the-expression-of-type-arraylist-needs-unchecked-conversion
-        ArrayList<Integer>[] dp = new ArrayList[arr.length]; // docs:
-                                                             // https://www.geeksforgeeks.org/array-of-arraylist-in-java/
+        @SuppressWarnings("unchecked") // docs: https://stackoverflow.com/questions/14847480/type-safety-the-expression-of-type-arraylist-needs-unchecked-conversion
+        ArrayList<Integer>[] dp = new ArrayList[arr.length]; // docs: https://www.geeksforgeeks.org/array-of-arraylist-in-java/
 
         dp[0] = new ArrayList<>();
         dp[0].add(arr[0]);
