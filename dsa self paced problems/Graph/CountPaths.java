@@ -13,6 +13,7 @@ public class CountPaths {
                     + countPaths(ig.vertices, ig.adjacencyList, source, destn));
         }
     }
+
     public static int countPaths(int V, ArrayList<ArrayList<Integer>> adj, int source, int destn) {
         int path[] = new int[V];
         if (source == destn)

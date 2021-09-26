@@ -33,15 +33,15 @@ public class NumberOfWayCoinChange {
         Arrays.fill(dp[0], 0); // i cant make sum =0, by using any number
 
         for (int s = 1; s <= sum; s++) // if i can make s with first of the coin
-                dp[s][0] = s % coins[0] == 0 ? 1 : 0;
+            dp[s][0] = s % coins[0] == 0 ? 1 : 0;
 
         for (int s = 1; s <= sum; s++) {
             for (int c = 1; c < coins.length; c++) {
                 dp[s][c] = dp[s][c - 1];
-                  if (s > coins[c])
+                if (s > coins[c])
                     dp[s][c] += dp[s - coins[c]][c];
                 // increase by 1 only when s is same with coins[c]
-                if (s == coins[c] )
+                if (s == coins[c])
                     dp[s][c]++;
             }
         }
