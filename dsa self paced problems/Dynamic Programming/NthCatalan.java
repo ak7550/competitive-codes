@@ -21,6 +21,8 @@ public class NthCatalan {
         // int cati[] = new int[n + 1];
         cat[0] = new BigInteger("1");
         // cati[0] = 1;
+
+        //=> tabulation
         for (int i = 1; i <= n; i++) {
             cat[i] = cat[i - 1].multiply(BigInteger.valueOf((int) ((2 * i) * (2 * i - 1))));
             cat[i] = cat[i].divide(BigInteger.valueOf(i * (i + 1)));
