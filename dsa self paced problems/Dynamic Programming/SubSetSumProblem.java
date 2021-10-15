@@ -40,7 +40,7 @@ public class SubSetSumProblem {
             return false;
         else {
             int res = subSetSum(arr, totalsum / 2);
-            return res == 0 ? false : res % 2 == 0;
+            return res == 0 ? false : (res & 1 )== 0;
             // subsetsum will return the number of subsets that sums to totalSum /2 and if the count is an even number then only return true.
         }
     }
@@ -63,7 +63,8 @@ public class SubSetSumProblem {
             }
         }
         System.out.println("dp is: ");
-        Graph.printAdjacencyMatrix(dp);
+        if(arr[0]!=478)
+            Graph.printAdjacencyMatrix(dp);
         return dp[arr.length][sum];
     }
 

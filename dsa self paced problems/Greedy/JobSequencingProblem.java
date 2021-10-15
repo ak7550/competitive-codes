@@ -43,7 +43,7 @@ public class JobSequencingProblem {
                 time++;
             }
         }
-        System.out.println("Number of jobs done: "+ time);
+        System.out.println("Number of jobs done: " + time);
         return maxProfit;
     }
 }

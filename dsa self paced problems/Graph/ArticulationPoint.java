@@ -19,6 +19,8 @@ public class ArticulationPoint {
 
     public static ArrayList<Integer> findArticulationPoint(ArrayList<ArrayList<Integer>> adj, int V) {
         pts = new ArrayList<Integer>();
+
+        //_ low is the lowest discovery time reachable from that particular node
         int low[] = new int[V], discovery[] = new int[V], source = 0;
         boolean found[] = new boolean[V];
         discoveryCount = 1;
