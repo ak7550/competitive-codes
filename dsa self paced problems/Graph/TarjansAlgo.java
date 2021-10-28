@@ -48,7 +48,7 @@ public class TarjansAlgo {
                 low[vertex] = Math.min(low[vertex], low[v]);
             }
         }
-        // if we get our condition satisfied we will pop our elements out from the stack
+        //-> if we get our condition satisfied we will pop our elements out from the stack ==> we found our strongly connected component ==> no anchestor is reachable from this node
         if (discovery[vertex] == low[vertex]) {
             int v = -1;
             ArrayList<Integer> r = new ArrayList<Integer>();

@@ -32,7 +32,8 @@ public class FractionalKnpaSack {
     public static double fractionalKnapsack(Item arr[], int weight) {
         double val = 0;
         Arrays.sort(arr,
-                (a, b) -> ((double) b.value / (double) b.weight > (double) a.value / (double) a.weight) ? 1 : -1);
+                (a, b) -> ((double) b.value / (double) b.weight > (double) a.value / (double) a.weight) ?
+                                1 : -1);
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].weight < weight) {
                 val += arr[i].value;
