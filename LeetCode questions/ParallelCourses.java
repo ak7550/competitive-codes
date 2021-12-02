@@ -18,7 +18,7 @@ public class ParallelCourses {
         int innerEdge[] = new int[time.length + 1]; // _1 -based indexing
         int completionTime[] = new int[time.length + 1];
         HashMap<Integer, ArrayList<Integer>> adj = new HashMap<>();
-        Arrays.stream(time).distinct().sorted().toArray()
+        Arrays.stream(time).distinct().sorted().toArray();
 
         for (int relation[] : relations) {
             innerEdge[relation[1]]++;

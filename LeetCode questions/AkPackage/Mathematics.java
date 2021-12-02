@@ -4,6 +4,30 @@ import java.util.*;
 
 // checking have not done yet. merging with master yet to be done
 public class Mathematics {
+    public static long mod = (long) Math.pow(10, 9) + 7;
+
+    public static long[][] matrixPow(long mat[][], int n) {
+        if (n == 1)
+            return mat;
+        long ans[][] = matrixPow(mat, n >> 1);
+
+        return (n & 1) == 1 ? matrixMultiply(ans, mat) : matrixMultiply(ans, ans);
+    }
+
+    public static long[][] matrixMultiply(long A[][], long B[][]) {
+        int row1 = A.length, col2 = B[0].length, row2 = A[0].length;
+        long C[][] = new long[row1][col2];
+
+        for (int i = 0; i < row1; i++) {
+            for (int j = 0; j < col2; j++) {
+                for (int k = 0; k < row2; k++)
+                    C[i][j] = (C[i][j] + (A[i][k] * B[k][j]) % mod) % mod;
+            }
+        }
+
+        return C;
+    }
+
     public static int gcd(int no, int div) {
         if (div == 0)
             return no;
@@ -15,10 +39,7 @@ public class Mathematics {
     }
 
     public static long factorial(int n) {
-        if (n <= 1) {
-            return 1;
-        }
-        return n * factorial(n - 1);
+        return n <= 1 ? 1 : (n * factorial(n - 1)) % mod;
     }
 
     public static int lcd(int arr[]) {

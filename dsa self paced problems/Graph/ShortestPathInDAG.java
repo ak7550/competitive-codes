@@ -20,7 +20,7 @@ public class ShortestPathInDAG {
             int vertex = ad.removeFirst();
             for (int u : adj[vertex]) {
                 if (dis[u] == Integer.MAX_VALUE) {
-                    dis[u] = Math.min(vertex - u + 1, dis[u]);
+                    dis[u] = Math.min(vertex - u + 1, dis[u]); //! doubt ==> u should have higher value, u - vertex should be there. ==> other than that, I doubt in the formula that is being applied.
                     ad.addLast(u);
                 }
             }
