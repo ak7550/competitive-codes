@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-import AkPackage.Graph;
+// import AkPackage.Graph;
 
 public class KnapSack2 {
     public static void main(String[] args) {

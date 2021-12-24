@@ -23,10 +23,8 @@ public class MinimumCostPath {
 
     // using pure dijkstra concept
     public static int minimumCostPath(int[][] grid) {
-        int res[][] = new int[grid.length][grid.length]; // res stores the value of minimum cost that needs to reach to
-                                                         // ( row, col) from (0, 0)
-        Arrays.stream(res).forEach(x -> Arrays.fill(x, Integer.MAX_VALUE)); // initially considering it needs infinity
-                                                                            // cost to reach all of the verices
+        int res[][] = new int[grid.length][grid.length]; // res stores the value of minimum cost that needs to reach to (row, col) from (0, 0)
+        Arrays.stream(res).forEach(x -> Arrays.fill(x, Integer.MAX_VALUE)); // initially considering it needs infinity cost to reach all of the verices
         boolean finalised[][] = new boolean[grid.length][grid.length];
         // int finalisedCount = 0;
         PriorityQueue<Pair> pq = new PriorityQueue<Pair>((a, b) -> res[a.row][a.col] - res[b.row][b.col]);
