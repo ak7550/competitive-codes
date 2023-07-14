@@ -1,6 +1,6 @@
 import AkPackage.*;
 import java.util.*;
-
+//*WRONG CODE
 public class MinOperationtoMakeKIncreasing {
     public static void main(String args[]) {
         ArrayList<String> lines = InputOutput.takeCompleteInput(new MinOperationtoMakeKIncreasing());

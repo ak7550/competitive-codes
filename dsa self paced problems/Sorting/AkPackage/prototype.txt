@@ -1,2 +1,0 @@
-methods to take input as arraylist, list, array
-for arraylist and list we must consider generics and try to convert them into their primitive datatypes while using an array.

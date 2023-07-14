@@ -49,16 +49,34 @@ public class SearchInSortedRotatedArray {
         return -1;
     }
 
+    public static int searchBiggest2(int arr[], int l, int h) {
+
+        while (h >= l) {
+            int mid = l + (h - l) / 2;
+            if (arr[mid] > arr[(mid + 1) % arr.length]) {
+                return mid;
+            }
+            if (arr[mid] < arr[l]) {
+                h = mid - 1;
+            } else {
+                l = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+
     public static int searchElement(int arr[], int l, int h, int s) {
-        int mid = l + (h - l) / 2;
-        if (h >= l) {
+
+        while (h >= l) {
+            int mid = l + (h - l) / 2;
             if (arr[mid] == s) {
                 return mid;
             }
             if (arr[mid] > s) {
-                return searchElement(arr, l, mid - 1, s);
+                h = mid - 1;
             } else {
-                return searchElement(arr, mid + 1, h, s);
+                l = mid + 1;
             }
         }
         return -1;

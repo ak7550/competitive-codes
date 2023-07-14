@@ -24,7 +24,8 @@ public class FindWhetherPathExist {
         return false;
     }
 
-    public static boolean dfs(ArrayList<ArrayList<Integer>> adj, int vertex, int des, boolean stack[], boolean found[]) {
+    public static boolean dfs(ArrayList<ArrayList<Integer>> adj, int vertex, int des, boolean stack[],
+            boolean found[]) {
         // stack[vertex] = true;
         found[vertex] = true;
         for (int v : adj.get(vertex)) {

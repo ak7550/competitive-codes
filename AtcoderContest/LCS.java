@@ -23,12 +23,12 @@ public class LCS {
         StringBuilder str = new StringBuilder();
         int i = s1.length(), j = s2.length();
         while (i > 0 && j > 0) {
-            if (dp[i][j] == dp[i - 1][j])
+            if (dp[i][j] == dp[i - 1][j]) //lcs matches with i --> go towards i
                 i--;
-            else if (dp[i][j] == dp[i][j - 1])
+            else if (dp[i][j] == dp[i][j - 1]) // vice versa
                 j--;
             else {
-                str.append(s1.charAt(i - 1));
+                str.append(s1.charAt(i - 1)); // lcs matches with both i & j --> that means s1.charAt(i) & s2.charAt(j) both are common
                 i--;
                 j--;
             }

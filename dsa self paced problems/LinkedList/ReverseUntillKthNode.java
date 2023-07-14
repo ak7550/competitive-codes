@@ -1,4 +1,3 @@
-import AkPackage.Node;
 import java.util.*;
 import AkPackage.*;
 
@@ -38,7 +37,7 @@ public class ReverseUntillKthNode {
         return obj;
     }
 
-    public static Node reverseLinkedList(Node head, int k) {
+    public static Node reverseLinkedList(Node head, int k) { 
         Node dummy = new Node(-1);
         dummy.next = head;
         int total = countTotal(head), count=0; //to count the length of the linkedlist
